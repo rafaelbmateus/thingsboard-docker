@@ -12,6 +12,7 @@ so you will never lose your data.
 
 
 ```console
+docker-compose pull
 docker-compose up
 ```
 
