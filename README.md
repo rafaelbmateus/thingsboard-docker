@@ -10,10 +10,17 @@ so you will never lose your data.
 
 ## Get Started
 
+Create data and logs directories:
 
 ```console
-docker-compose pull
-docker-compose up
+mkdir -p data && sudo chown -R 799:799 data
+mkdir -p logs && sudo chown -R 799:799 logs
+```
+
+Running the service:
+
+```console
+docker compose up
 ```
 
 After executing this command you can open http://localhost:8080 in your browser.
@@ -26,3 +33,9 @@ Use the following default credentials:
 
 More informations:
 https://thingsboard.io/docs/user-guide/install/docker
+
+## API
+
+```console
+curl -v -X POST -d "{\"consumed\": 2000}" http://localhost:8080/api/v1/rpu11qy8wiwilax5647p/telemetry --header "Content-Type:application/json"
+```
